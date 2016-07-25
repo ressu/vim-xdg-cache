@@ -15,7 +15,7 @@ let s:vim_cache=fnamemodify(expand('$XDG_CACHE_HOME/vim'), ':p')
 
 function! s:set_and_create(dest_var, dest_dir)
   if !get(g:, "vim_xdg_cache_" . a:dest_var . "_disabled", 0)
-    let l:fullpath=s:vim_cache . a:dest_dir
+    let l:fullpath=s:vim_cache . "/" . a:dest_dir
     if !isdirectory(l:fullpath)
       call mkdir(l:fullpath, "p")
     endif
